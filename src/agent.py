@@ -24,7 +24,7 @@ def review_session_abstract(title: str, abstract: str) -> dict[str, Any]:
   """Reviews a Google Cloud Next '27 session proposal for clarity and impact."""
   with tracer.start_as_current_span("tool.review_session_abstract"):
     word_count = len(abstract.strip().split())
-    score = 90 if word_count >= 25 else 65
+    score = 90 if word_count >= 15 else 65
     return {
         "session_title": title,
         "word_count": word_count,
